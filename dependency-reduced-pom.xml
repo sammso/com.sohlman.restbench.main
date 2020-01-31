@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.sohlman.restbench</groupId>
-  <artifactId>com.sohlman.restbench.main</artifactId>
-  <name>Rest Bench</name>
+  <groupId>com.sohlman.vertx.site</groupId>
+  <artifactId>com.sohlman.vertx.site</artifactId>
+  <name>Vert X Site</name>
   <version>0.0.1-SNAPSHOT</version>
   <description>Restbench is simple REST application for testing REST clients</description>
   <build>
@@ -28,7 +28,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.sohlman.restbench.Main</mainClass>
+                  <mainClass>com.sohlman.vertx.site.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -52,6 +52,7 @@
     </dependency>
   </dependencies>
   <properties>
+    <io.vertx.version>3.8.3</io.vertx.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>

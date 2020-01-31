@@ -1,0 +1,80 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: SlowSite API
+paths:
+  /api/minimum-request-time:
+    get:
+      summary: Minimum request time
+      operationId: get-minimum-request-time
+      responses:
+        200:
+          description: Minimum request time
+          content:
+            application/json:    
+              schema:
+                type: integer
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      summary: Set new minimum request time 
+      operationId: set-minimum-request-time
+      responses:
+        200:
+          description: Previous minimum request time
+          content:
+            application/json:    
+              schema:
+                type: integer
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+  /api/maximum-request-time:
+    get:
+      summary: Maximum request time
+      operationId: get-maximum-request-time
+      responses:
+        200:
+          description: Minimum request time
+          content:
+            application/json:    
+              schema:
+                type: integer
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+    put:
+      summary: Set new maximum request time 
+      operationId: set-maximum-request-time
+      responses:
+        200:
+          description: Previous maximum request time
+          content:
+            application/json:    
+              schema:
+                type: integer
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string

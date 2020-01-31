@@ -2,24 +2,36 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.sohlman.restbench</groupId>
-	<artifactId>com.sohlman.restbench.main</artifactId>
+	<groupId>com.sohlman.vertx.site</groupId>
+	<artifactId>com.sohlman.vertx.site</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Rest Bench</name>
+	<name>Vert X Site</name>
 	<description>Restbench is simple REST application for testing REST clients</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<io.vertx.version>3.8.3</io.vertx.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-core</artifactId>
-			<version>3.5.4</version>
+			<version>${io.vertx.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.vertx</groupId>
 			<artifactId>vertx-web</artifactId>
-			<version>3.5.4</version>
+			<version>${io.vertx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-web-api-contract</artifactId>
+			<version>${io.vertx.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-web-templ-freemarker</artifactId>
+			<version>${io.vertx.version}</version>
+			<classifier>shaded</classifier>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -55,7 +67,7 @@
 								<!-- add Main-Class to manifest file -->
 								<transformer
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.sohlman.restbench.Main</mainClass>
+									<mainClass>com.sohlman.vertx.site.Main</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
